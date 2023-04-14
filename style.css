@@ -1,0 +1,368 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Abel', sans-serif;
+    background-color: rgb(243, 240, 237);
+}
+
+/* ********************************** Menu Nav ********************************** */
+nav {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding-left: 10vw;
+    padding-right: 15vw;
+    position: fixed;
+    z-index: 1;
+    font-family: 'prompt';
+    font-size: 1.3em;
+    background-color: rgb(255, 255, 255);
+    transition: .7s;
+    border-bottom: 2px solid rgb(179, 68, 160);
+    box-shadow: 5px 5px 10px grey;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-around;
+    height: 30px;
+    align-items: center;
+}
+
+nav li,
+a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    text-shadow: 5px 5px 7px grey;
+}
+
+nav li a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+nav li a:hover:after {
+    width: 95%;
+    background: black;
+    box-shadow: 5px 5px 7px grey;
+}
+
+
+/* *********************************** class pour effet *********************************** */
+.visible {
+    opacity: 1;
+    transform: translateX(0) !important;
+    transform: translateY(0) !important;
+    transition: 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+[class*="reveal-"] {
+    opacity: 0;
+    transform: translateZ(-150px);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateZ(0);
+    transition: 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+
+.reveal-2 {
+    transition-delay: .2s;
+}
+
+.reveal-3 {
+    transition-delay: .4s;
+}
+/* ************************************ header et titre ********************************** */
+
+header {
+    width: 100vw;
+    height: 55vh;
+    justify-content: center;
+    text-align: center;
+    padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 5em;
+    text-shadow: 5px 5px 30px rgb(179, 68, 160);
+    opacity: 0;
+    transform: translateY(-150px);
+}
+
+#line {
+    width: 25vh;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 3vh;
+    box-shadow: 5px 5px 15px rgb(179, 68, 160);
+}
+
+h2 {
+    font-size: 2.5em;
+    text-shadow: 5px 5px 7px grey;
+    opacity: 0;
+    transform: translateX(-150px);
+}
+
+/* *************************** Banners ***************************** */
+
+#breakpoint img {
+    width: 100vw;
+}
+
+#banner-baby img{
+    width: 100vw;
+    margin-top: 7vh;
+}
+
+/* ************************** Section (commune à tous) ************* */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    text-align: justify;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 1.5em;
+    transform: translateY(150px);
+    opacity: 0;
+}
+
+
+/* ************************ section accueil *********************** */
+#role-doula {
+    width: 60vw;
+    background-color: white;
+    box-shadow: 5px 5px 10px grey;
+    padding: 7vw;
+    margin-top: 8vh;
+}
+
+h3 {
+    text-shadow: 3px 3px 5px grey;
+}
+
+/* ************************** section presentation ******************** */
+#presentation {
+    width: 60vw;
+    background-color: white;
+    box-shadow: 5px 5px 10px grey;
+    padding: 7vw;
+    margin-top: 8vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#my-picture {
+    border-radius: 50%;
+    width: 12vw;
+    box-shadow: 5px 5px 10px grey;
+}
+
+
+/* ****************************** services ***************************** */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    text-align: justify;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 1.5em;
+    background-color: white;
+    padding-top: 7vh;
+    position: relative;
+}
+
+.services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    justify-content: space-between;
+    width: 60vw;
+    padding: 3vw;
+    margin-top: 4vh;
+}
+
+.information-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 15vw;
+    height: 38vh;
+    flex-wrap: wrap;
+    text-align: center;
+    min-width: 200px;
+    transition-duration: .3s;
+    z-index: 1;
+}
+
+.information-service:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.information-service img {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    margin-bottom: 2vh;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.service-name {
+    text-shadow: 5px 5px 10px grey;
+}
+
+.open {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(77, 77, 77, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 2;
+}
+
+.modal:target {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5em 2em;
+    width: 80vw;
+    border-radius: 4px;
+    position: relative;
+    top: -15vh;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-shadow: 5px 5px 10px grey;
+}
+
+.modal h3 {
+    text-align: center;
+}
+
+#tarifs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #f6f6f6;
+    padding: 50px 0;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  #tarifs-container {
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .tarifs-card {
+    width: 45%;
+    height: 200px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .tarifs-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .tarifs-card-left {
+    margin-right: 20px;
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  
+  .tarifs-card-right {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  .tarifs-services {
+    text-align: center;
+  }
+  
+  .tarifs-services h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #b344a1;
+  }
+  
+  .tarifs-services-desc {
+    font-size: 1.1rem;
+    color: #8f8f8f;
+  }
+  
+  .tarifs-value {
+    font-size: 2rem;
+    color: #b344a1;
+    background-color: rgba(179, 68, 161, 0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .visible-tarifs {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s cubic-bezier(0.5, 0, 0, 1);
+  }
